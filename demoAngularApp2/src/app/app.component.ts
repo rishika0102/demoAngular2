@@ -7,4 +7,12 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'demoAngularApp2';
+  userName = '';
+  showSecret = false;
+  log = [0];
+
+   onToggleDisplay() {
+    this.showSecret = !this.showSecret;
+    this.log.push(this.log.length + 1);
+   }
 }

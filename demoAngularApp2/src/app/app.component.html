@@ -2,9 +2,18 @@
   <div class="row">
     <div class= "col-xs-12">
       <h3>I m in the component</h3>
-      <div app-server></div>
+      <app-server></app-server>
       <app-success></app-success>
+      <label>Username</label>
+      <input type="text" class="form-control" [(ngModel)]="userName">
+      <p>{{userName}}</p>
+      <button class="btn btn-primary" [disabled]="userName === ''" (click)="userName = ''">Reset user</button>
+      <button class="btn btn-primary" (click)="onToggleDisplay()">Display Details</button>
+      <p *ngIf = "showSecret">Secret Password = secret</p>
+     <div *ngFor = "let logItem of log">{{ logItem }}
+     </div>
     </div>
   </div>
 </div>
+
 

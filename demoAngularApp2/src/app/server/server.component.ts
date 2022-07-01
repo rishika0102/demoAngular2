@@ -1,8 +1,13 @@
 import {Component } from '@angular/core';
 
 @Component({
-  selector: '[app-server]',
-  templateUrl: './server.component.html'
+  selector: 'app-server',
+  templateUrl: './server.component.html',
+  styles: [`
+  .online {
+    color: white;
+  }
+  `]
 })
 export class ServerComponent {
   serverId: number = 10;
@@ -10,6 +15,9 @@ export class ServerComponent {
   allowNewServer = false;
   serverCreationStatus = 'No server was created';
   serverName = '';
+  serverCreated = false;
+  servers = ['Testserver', 'Testserver2'];
+
   getServerStatus() {
     return this.serverStatus;
   }
@@ -17,14 +25,23 @@ export class ServerComponent {
     setTimeout(() => {
       this.allowNewServer = true;
     } , 2000);
+    this.serverStatus = Math.random() > 0.5 ? 'online' : 'offline';
+    console.log(this.serverStatus);
   }
   onCreateServer() {
+    this.serverCreated = true;
     this.serverCreationStatus = 'Server was created';
+  }
+  onCreateServers() {
+    this.servers.push(this.serverName);
   }
   onUpdateServerName(event: Event) {
     this.serverName = (<HTMLInputElement>event.target).value;
   }
   onPassEvent(event: any){
     console.log(event);
+  }
+  getColor() {
+  return this.serverStatus === 'online' ? 'green' : 'red';
   }
 }

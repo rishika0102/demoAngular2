@@ -1,8 +1,16 @@
 
 <label>Server name</label>
-<input type="text" class="form-control" (input)="onUpdateServerName($event)">
+<input type="text" class="form-control" (input)="onUpdateServerName($event)"><br>
+<p>Two way binding</p>
+<input type="text" class="form-control" [(ngModel)]="serverName">
 <p>{{serverName}}</p>
-<button (click)="onPassEvent($event)">Click me for passing event</button>
-<p>Server Id {{ serverId }} and server status by method {{getServerStatus()}} </p>
+<button (click)="onPassEvent($event)">Click me for passing event and check console</button><br><br>
 <button class="btn btn-primary" [disabled]="!allowNewServer" (click)="onCreateServer()">Add server</button>
-<p>{{serverCreationStatus}}</p>
+<p *ngIf="serverCreated; else noServer">Server Id {{ serverId }} and server status by method {{getServerStatus()}} </p>
+<ng-template #noServer>
+  <p>No server was created</p>
+</ng-template>
+<p>ng Styling<p>
+<p [ngStyle]="{backgroundColor: getColor()}" [ngClass]="{online: serverStatus === 'online'}">{{'Server'}} {{serverId}} is {{getServerStatus()}}</p>
+<button class="btn btn-primary" (click)="onCreateServers()">Add Multiple servers</button>
+<!-- <app-server *ngFor='let server for servers'></app-server> -->
