@@ -13,4 +13,7 @@
 <p>ng Styling<p>
 <p [ngStyle]="{backgroundColor: getColor()}" [ngClass]="{online: serverStatus === 'online'}">{{'Server'}} {{serverId}} is {{getServerStatus()}}</p>
 <button class="btn btn-primary" (click)="onCreateServers()">Add Multiple servers</button>
-<!-- <app-server *ngFor='let server for servers'></app-server> -->
+<p>local references</p>
+<input type="text" class="form-control" #servername>
+<br>
+<button class="btn btn-primary" (click)="onAddServer(servername)">Add servers</button>
