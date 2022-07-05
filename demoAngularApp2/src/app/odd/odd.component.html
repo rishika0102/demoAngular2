@@ -1,1 +1,7 @@
 <p>odd works!{{number}}</p>
+<div>
+  <div>
+    <button (click)="getPoints()"
+    [ngClass]= "pointStatus == 1 ?'downloading':'downloaded'">Download</button>
+  </div>
+</div>

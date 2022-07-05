@@ -31,8 +31,16 @@
   </app-cockpit>
   <div>
     <app-game-control (intervalFired)="onIntervalFired($event)"></app-game-control>
-    <app-odd *ngFor="let oddNumber of oddNumbers" [number]="oddNumber"></app-odd>
-     <app-even *ngFor="let evenNumber of evenNumbers" [number]="evenNumber"></app-even>
+    <app-odd *ngFor="let oddNumber of oddNumbers" [number]="oddNumber">
+    </app-odd>
+     <app-even *ngFor="let evenNumber of evenNumbers" [number]="evenNumber" ></app-even>
+     <br><br>
+     <div class="container">
+     <button [ngStyle]="{'font-size.px':20, 'mx':10, 'font-style':'italic', 'color':'red'}">ng Inline style</button>
+     <button [ngStyle]="addStyle()">ng Method style</button><br><br>
+     <p appBasicHighlight>Style me with basic directive</p>
+     <p appBetterHighlight>Style me with better directive</p>
+   </div>
   </div>
 </div>
 

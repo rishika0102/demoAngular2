@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, HostBinding } from '@angular/core';
 
 @Component({
   selector: 'app-counter',
@@ -6,7 +6,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./counter.component.css']
 })
 export class CounterComponent implements OnInit {
-    public counter:number = 0;
+  public counter:number = 0;
+  @HostBinding('attr.checked')
+  checked = false;
   constructor() { }
 
   ngOnInit(): void {
@@ -16,6 +18,10 @@ export class CounterComponent implements OnInit {
   }
   decrement() {
     this.counter--;
+  }
+  toggleCheck(){
+    console.log("toggle");
+    this.checked = !this.checked;
   }
 }
 

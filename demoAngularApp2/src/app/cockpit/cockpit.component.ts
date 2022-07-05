@@ -2,7 +2,6 @@ import { Component,
   OnInit,
   OnChanges,
   SimpleChanges,
-  DoCheck,
   AfterContentInit,
   AfterContentChecked,
   AfterViewInit,
@@ -18,7 +17,6 @@ import { Component,
   styleUrls: ['./cockpit.component.css']
 })
 export class CockpitComponent implements OnInit,OnChanges,
-  DoCheck,
   AfterContentInit,
   AfterContentChecked,
   AfterViewInit,
@@ -29,16 +27,16 @@ export class CockpitComponent implements OnInit,OnChanges,
   constructor() {
     console.log("constructor called");
   }
-  ngOnChanges(changes: SimpleChanges) {
+  ngOnChanges(changes: SimpleChanges): void {
     console.log("on change called");
     console.log(changes);
   }
   ngOnInit(): void {
     console.log("ngOnInit called");
   }
-  ngDoCheck() {
-    console.log("ngDoCheck called");
-  }
+  // ngDoCheck(): void {
+  //   console.log("ngDoCheck called");
+  // }
   ngAfterContentInit() {
     console.log("ng after content called");
   }

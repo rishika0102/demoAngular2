@@ -6,6 +6,7 @@ import { CounterComponent } from './counter/counter.component';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
+
 export class AppComponent implements OnInit, AfterViewInit {
   title = 'demoAngularApp2';
   userName = '';
@@ -14,32 +15,46 @@ export class AppComponent implements OnInit, AfterViewInit {
   oddNumbers: number[] =[];
   evenNumbers: number[] =[];
 
-    @ViewChildren("highlight")marker:QueryList<any>;
-    @ViewChild('childView')child:CounterComponent;
-    onToggleDisplay() {
-      this.showSecret = !this.showSecret;
-      this.log.push(this.log.length + 1);
-    }
-    ngOnInit() {
+  @ViewChildren("highlight")marker:QueryList<any>;
+  @ViewChild('childView')child:CounterComponent;
 
+  onToggleDisplay() {
+    this.showSecret = !this.showSecret;
+    this.log.push(this.log.length + 1);
+  }
+
+  ngOnInit() {
+
+  }
+
+  ngAfterViewInit() {
+    console.log(this.marker);
+    this.marker.first.nativeElement.style.color = "red";
+    this.marker.last.nativeElement.style.color = "green";
+  }
+
+  inc() {
+    this.child.increment();
+  }
+
+  dec() {
+    this.child.decrement();
+  }
+
+  onIntervalFired(firedNumber: number) {
+    if(firedNumber % 2 === 0){
+      this.evenNumbers.push(firedNumber);
+    } else {
+      this.oddNumbers.push(firedNumber);
     }
-    ngAfterViewInit() {
-      console.log(this.marker);
-      this.marker.first.nativeElement.style.color = "red";
-      this.marker.last.nativeElement.style.color = "green";
+  }
+
+  addStyle() {
+    return {
+     'font-size.px':20,
+     'font-style': 'italic',
+     'color': 'pink',
+     'mx':10
     }
-    inc() {
-      this.child.increment();
-    }
-    dec() {
-       this.child.decrement();
-    }
-    onIntervalFired(firedNumber: number){
-      // console.log(firedNumber);
-      if(firedNumber % 2 === 0){
-        this.evenNumbers.push(firedNumber);
-      } else {
-        this.oddNumbers.push(firedNumber);
-      }
-    }
+  }
 }
