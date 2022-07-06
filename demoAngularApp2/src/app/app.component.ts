@@ -1,10 +1,16 @@
 import { Component, OnInit,  ViewChild, AfterViewInit, ElementRef, ViewChildren, QueryList } from '@angular/core';
 import { CounterComponent } from './counter/counter.component';
-
+import {  EnrollServiceService } from './enroll-service.service';
+import { ParentService } from './parent.service';
+import { LoggerService } from './logger.service';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  styleUrls: ['./app.component.css'],
+  providers: [EnrollServiceService,
+  ParentService,
+  LoggerService
+  ]
 })
 
 export class AppComponent implements OnInit, AfterViewInit {
@@ -14,7 +20,8 @@ export class AppComponent implements OnInit, AfterViewInit {
   log = [0];
   oddNumbers: number[] =[];
   evenNumbers: number[] =[];
-
+  users: {name: string, status: string}[] = [];
+  constructor(private enroll:  EnrollServiceService, private parenting: ParentService, private LoggerService: LoggerService) { }
   @ViewChildren("highlight")marker:QueryList<any>;
   @ViewChild('childView')child:CounterComponent;
 
@@ -24,7 +31,7 @@ export class AppComponent implements OnInit, AfterViewInit {
   }
 
   ngOnInit() {
-
+    this.users=this.parenting.users;
   }
 
   ngAfterViewInit() {

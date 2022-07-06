@@ -1,0 +1,12 @@
+<div style="background-color: pink; text-align: center;">
+<div>
+  <input type="text" placeholder="Username" [(ngModel)]="username">
+</div><br>
+<div style="text-align: center">
+  <select name="status" [(ngModel)]="status">
+    <option value="active">Active</option>
+    <option value="inactive">Inactive</option>
+  </select>
+</div><br>
+  <button (click)="AddUser()">Create user</button>
+</div>

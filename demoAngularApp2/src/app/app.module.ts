@@ -13,6 +13,10 @@ import { OddComponent } from './odd/odd.component';
 import { EvenComponent } from './even/even.component';
 import { BasicHighlightDirective } from './basic-highlight/basic-highlight.directive';
 import { BetterHighlightDirective } from './better-highlight.directive';
+import { JavascriptComponent } from './javascript/javascript.component';
+import { AngularComponent } from './angular/angular.component';
+import { ParentService } from './parent.service';
+import { AdduserComponent } from './adduser/adduser.component';
 
 
 
@@ -28,6 +32,9 @@ import { BetterHighlightDirective } from './better-highlight.directive';
     EvenComponent,
     BasicHighlightDirective,
     BetterHighlightDirective,
+    JavascriptComponent,
+    AngularComponent,
+    AdduserComponent,
 
   ],
   imports: [
@@ -37,7 +44,7 @@ import { BetterHighlightDirective } from './better-highlight.directive';
   exports: [
      BetterHighlightDirective
   ],
-  providers: [],
+  providers: [ParentService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
