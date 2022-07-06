@@ -17,8 +17,13 @@ import { JavascriptComponent } from './javascript/javascript.component';
 import { AngularComponent } from './angular/angular.component';
 import { ParentService } from './parent.service';
 import { AdduserComponent } from './adduser/adduser.component';
+import { Routes, RouterModule } from '@angular/router';
 
 
+const appRoutes: Routes = [
+  {path: 'ser', component: ServerComponent },
+  {path: 'ang', component: AngularComponent }
+];
 
 @NgModule({
   declarations: [
@@ -39,7 +44,8 @@ import { AdduserComponent } from './adduser/adduser.component';
   ],
   imports: [
     BrowserModule,
-    FormsModule
+    FormsModule,
+    RouterModule.forRoot(appRoutes)
   ],
   exports: [
      BetterHighlightDirective
