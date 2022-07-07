@@ -11,6 +11,7 @@ export class RouterlinksComponent implements OnInit {
   constructor(private router: Router) { }
 
   ngOnInit(): void {
+    console.log("life cycle method called");
   }
   onLoadServers() {
     this.router.navigate(['/route']);

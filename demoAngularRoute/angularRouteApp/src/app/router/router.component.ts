@@ -10,6 +10,7 @@ export class RouterComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+    console.log("life cycle method called");
   }
 
 }
