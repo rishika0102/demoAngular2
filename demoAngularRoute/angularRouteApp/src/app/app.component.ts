@@ -9,5 +9,5 @@ import { DataService } from './data.service';
 })
 export class AppComponent {
   title = 'angularRouteApp';
-
+ constructor(private dataService: DataService){}
 }

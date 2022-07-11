@@ -12,6 +12,7 @@ import { StaticDataComponent } from './static-data/static-data.component';
 import { ChildrouteComponent } from './childroute/childroute.component';
 import { ChildroutingComponent } from './childrouting/childrouting.component';
 import { EditServerComponent } from './edit-server/edit-server.component';
+import { WildCardComponent } from './wild-card/wild-card.component';
 
 
 const appRoutes: Routes = [
@@ -33,7 +34,8 @@ const appRoutes: Routes = [
       },
     ]
   },
-  { path: 'static', component: StaticDataComponent, data: {message: "page not found"} }
+  { path: 'static', component: StaticDataComponent, data: {message: "page not found"} },
+  // { path: '**', component: WildCardComponent }
 ]
 
 @NgModule({
@@ -46,7 +48,8 @@ const appRoutes: Routes = [
     StaticDataComponent,
     ChildrouteComponent,
     ChildroutingComponent,
-    EditServerComponent
+    EditServerComponent,
+    WildCardComponent
   ],
   imports: [
     BrowserModule,

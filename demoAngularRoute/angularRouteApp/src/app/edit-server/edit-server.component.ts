@@ -10,6 +10,7 @@ export class EditServerComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+    console.log("ng");
   }
 
 }

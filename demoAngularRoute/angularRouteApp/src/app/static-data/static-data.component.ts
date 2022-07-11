@@ -11,10 +11,6 @@ import { DataService } from '../data.service';
 export class StaticDataComponent implements OnInit {
 
    enteredText: string ;
-   OnBtnClick(){
-     console.log(this.enteredText);
-     this.dataservice.raiseDataEmitterEvent(this.enteredText);
-   }
   constructor(private route: ActivatedRoute, private dataservice: DataService) { }
   array1 = [9, 8, 7, 6, 5];
   ngOnInit() {
@@ -69,6 +65,10 @@ export class StaticDataComponent implements OnInit {
     );
 
   }
+    OnBtnClick(){
+     console.log(this.enteredText);
+     this.dataservice.raiseDataEmitterEvent(this.enteredText);
+   }
   myObservable = new Observable((observer) => {
     console.log('Observable starts')
     setTimeout(()=>{observer.next("1")}, 1000)

@@ -24,12 +24,12 @@ export class UsersComponent {
     }
   ];
     showRoute(){
-    console.log("routechild");
-    // this.router.navigate(['routechild']);
+    console.log("routechild", this.router.navigate(['routechild']));
+    this.router.navigate(['routechild']);
   }
   showRouting(){
-    console.log("routingchild");
-     // this.router.navigate(['routingchild']);
+    console.log("routingchild", this.router.navigate(['routingchild']));
+     this.router.navigate(['routingchild']);
   }
 
 }
