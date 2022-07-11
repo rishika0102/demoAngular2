@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router} from '@angular/router';
 
 @Component({
   selector: 'app-user',
@@ -8,7 +8,7 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class UserComponent implements OnInit {
   user:  { id: string; name: string };
-  constructor(private route: ActivatedRoute) { }
+  constructor(private route: ActivatedRoute, private router: Router) { }
 
   ngOnInit(): void {
     this.user = {
@@ -16,6 +16,9 @@ export class UserComponent implements OnInit {
       name: this.route.snapshot.params['name'],
     };
   }
-
+  query() {
+    this.router.navigate(['/user', 2, 'adan']),
+      {queryParams:{page: 1, search: 'adan'}}
+  }
 
 }

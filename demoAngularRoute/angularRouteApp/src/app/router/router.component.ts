@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { DataService } from '../data.service';
 
 @Component({
   selector: 'app-router',
@@ -7,10 +8,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RouterComponent implements OnInit {
 
-  constructor() { }
+  constructor(private dataservice: DataService) { }
 
   ngOnInit(): void {
     console.log("life cycle method called");
+    this.dataservice.dataEmitter.subscribe((value)=>{
+      this.inputText = value;
+  })
   }
-
+ inputText: string;
 }
