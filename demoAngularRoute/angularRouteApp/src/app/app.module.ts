@@ -13,8 +13,17 @@ import { ChildrouteComponent } from './childroute/childroute.component';
 import { ChildroutingComponent } from './childrouting/childrouting.component';
 import { EditServerComponent } from './edit-server/edit-server.component';
 import { WildCardComponent } from './wild-card/wild-card.component';
-
-
+import { ReactiveComponent } from './reactive/reactive.component';
+import {ReactiveFormsModule} from '@angular/forms';
+import { FirebaseComponent } from './firebase/firebase.component';
+import { HttpClientModule } from '@angular/common/http';
+import { HttpserviceComponent } from './httpservice/httpservice.component';
+import { AuthService } from './auth.service';
+import { AuthguardService} from './authguard.service';
+import { DeactivateService } from './deactivate.service';
+import { DeactivateComponent } from './deactivate/deactivate.component';
+import { UserResloveService } from './user-reslove.service';
+import {UserService } from './user.service';
 const appRoutes: Routes = [
   { path: 'route', component: RouterComponent},
   { path: 'routelink', component: RouterlinksComponent},
@@ -26,16 +35,20 @@ const appRoutes: Routes = [
       }
      ]
   },
-  { path: 'user', component: UserComponent,
+  { path: 'user', component: UserComponent, canActivate: [AuthguardService],
     children: [
       { path: ':id/:name', component: UserComponent
       },
-      { path: ':id/edit', component: EditServerComponent
+      { path: ':id', component: EditServerComponent
       },
     ]
   },
+  {path: 'deactive', component: DeactivateComponent, canDeactivate: [DeactivateService]},
   { path: 'static', component: StaticDataComponent, data: {message: "page not found"} },
-  // { path: '**', component: WildCardComponent }
+  { path: 'react', component: ReactiveComponent},
+  { path: 'fire', component: FirebaseComponent},
+  { path: 'htp', component: HttpserviceComponent},
+  { path: '**', component: WildCardComponent }
 ]
 
 @NgModule({
@@ -49,15 +62,21 @@ const appRoutes: Routes = [
     ChildrouteComponent,
     ChildroutingComponent,
     EditServerComponent,
-    WildCardComponent
+    WildCardComponent,
+    ReactiveComponent,
+    FirebaseComponent,
+    HttpserviceComponent,
+    DeactivateComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     RouterModule.forRoot(appRoutes),
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [AuthService, AuthguardService, DeactivateService, UserService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

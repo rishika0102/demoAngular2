@@ -1,0 +1,51 @@
+<div>
+  <p>Reactive works!</p>
+  <form [formGroup]="signupForm" (ngSubmit)="onSubmit(signupForm)">
+    <div formGroupName="userData">
+      <div class="form-group">
+        <label>Username</label>
+        <input type="text" id="Username" class="form-control"
+        name="username"
+        formControlName = "username"
+        />
+        <span *ngIf="!signupForm.get('userData.username')?.valid && signupForm.get('userData.username')?.touched
+        ">Please enter a valid username</span>
+        <div class="form-group">
+        <label>mail</label>
+        <input type="email" id="email" class="form-control"
+        name="email"
+        formControlName = "email"
+        />
+        <span *ngIf="!signupForm.get('userData.email')?.valid && signupForm.get('userData.email')?.touched
+        ">Please enter a valid Email</span>
+        </div>
+      </div>
+    </div>
+    <div class="radio" *ngFor="let gender of genders">
+      <label>
+        <input type="radio"
+          name="gender"
+          ngModel
+          [value]="gender"
+          formControlName = "gender"
+          >
+          {{gender}}
+      </label>
+    </div>
+    <div formArrayName = "hobbies">
+      <h4>Your Hobbies</h4>
+      <button class="btn btn-default" type="button" (click)="onAddHobby()">Add Hobby</button>
+      <div class="form-group"
+        *ngFor = "let hobbyControl of signupForm.get('hobbies')?.value; let i = index">
+        <input type="text" class="form-control" [formControlName]="i">
+      </div>
+    </div>
+    <button class="btn btn-primary" type="submit">Submit</button>
+  </form>
+   <p> {{ name | lowercase}}</p>
+   <p> {{ name | uppercase}}</p>
+   <p> piping with json {{ person | json }}</p>
+   <p>{{ date | date: 'short'}}</p>
+   <p>{{ usersData }}</p>
+</div>
+
