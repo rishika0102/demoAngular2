@@ -1,2 +1,22 @@
 <p>edit-server works!</p>
 <p> notification message {{notificationMessage}}</p>
+<p>{{appStatus | async}}</p>
+<button (click)="onAddUser()">Add user</button>
+<input type="text" class="form-control" [(ngModel)]="filteredString"/>
+<table>
+  <tr>
+    <th>First Name</th>
+    <th>last Name</th>
+    <th>Salary</th>
+    <th>DOB</th>
+    <th>Age</th>
+  </tr>
+  <tr *ngFor = "let users of user" >
+    <td>{{users.firstname | uppercase }}</td>
+    <td>{{users.lastname | lowercase}}</td>
+    <td>{{users.salary }}</td>
+    <td>{{users.Dob |date: 'dd/MM/YYYY'}}</td>
+    <td>{{users.Dob | pipes }}</td>
+  </tr>
+</table>
+

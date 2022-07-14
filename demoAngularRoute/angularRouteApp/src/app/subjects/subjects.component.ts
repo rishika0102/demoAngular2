@@ -14,7 +14,6 @@ export class SubjectsComponent implements OnInit {
 
   const subject = new Subject();
 
-
   subject.subscribe(d => console.log(d));
   subject.subscribe(d => console.log(d));
 
@@ -24,6 +23,7 @@ export class SubjectsComponent implements OnInit {
   bsubject.subscribe(d => console.log('BehaviorSubject"', d));
 
 }
+
  sendMessage(data: any) {
    console.log("sendMessagess", data.value);
    this.notificationS.sendNotification(data.value);

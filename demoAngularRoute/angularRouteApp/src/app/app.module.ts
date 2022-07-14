@@ -28,7 +28,9 @@ import { AuthResolveComponent } from './auth-resolve/auth-resolve.component';
 import { SubjectsComponent } from './subjects/subjects.component';
 import {NotificationService} from './notification.service';
 import {HeadInterceptor} from './head.interceptor';
-import { HeadsInterceptor } from './heads.interceptor'
+import { HeadsInterceptor } from './heads.interceptor';
+import { PipesPipe } from './pipes.pipe';
+import { FilterPipe } from './filter.pipe'
 const appRoutes: Routes = [
   { path: 'route', component: RouterComponent},
   { path: 'routelink', component: RouterlinksComponent},
@@ -54,6 +56,7 @@ const appRoutes: Routes = [
   { path: 'htp', component: HttpserviceComponent},
   { path: 'res', component: AuthResolveComponent},
   { path: 'sub', component: SubjectsComponent},
+   { path: 'child', component: ChildrouteComponent},
   // { path: 'edit' , component: EditServerComponent},
   { path: '**', component: WildCardComponent }
 ]
@@ -75,7 +78,9 @@ const appRoutes: Routes = [
     HttpserviceComponent,
     DeactivateComponent,
     AuthResolveComponent,
-    SubjectsComponent
+    SubjectsComponent,
+    PipesPipe,
+    FilterPipe
   ],
   imports: [
     BrowserModule,
