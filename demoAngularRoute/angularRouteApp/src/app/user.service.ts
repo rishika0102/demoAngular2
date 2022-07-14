@@ -1,8 +1,8 @@
-import { Injectable } from '@angular/core';
+
 
 export class UserService {
 
-  constructor() { }
+
   getUser(id: string){
     if(id==='1'){
       return {
@@ -11,8 +11,8 @@ export class UserService {
       }
     } else {
         return {
-        id: '1',
-        name: 'test'
+        id: '3',
+        name: 'test1'
       }
     }
   }

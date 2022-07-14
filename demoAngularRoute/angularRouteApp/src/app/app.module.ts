@@ -23,7 +23,10 @@ import { AuthguardService} from './authguard.service';
 import { DeactivateService } from './deactivate.service';
 import { DeactivateComponent } from './deactivate/deactivate.component';
 import { UserResloveService } from './user-reslove.service';
-import {UserService } from './user.service';
+// import {UserService } from './user.service';
+import { AuthResolveComponent } from './auth-resolve/auth-resolve.component';
+import { SubjectsComponent } from './subjects/subjects.component';
+import {NotificationService} from './notification.service';
 const appRoutes: Routes = [
   { path: 'route', component: RouterComponent},
   { path: 'routelink', component: RouterlinksComponent},
@@ -38,16 +41,18 @@ const appRoutes: Routes = [
   { path: 'user', component: UserComponent, canActivate: [AuthguardService],
     children: [
       { path: ':id/:name', component: UserComponent
-      },
-      { path: ':id', component: EditServerComponent
-      },
+      }
     ]
   },
-  {path: 'deactive', component: DeactivateComponent, canDeactivate: [DeactivateService]},
+  {path: 'deactive', component: DeactivateComponent, canDeactivate: [DeactivateService]
+  },
   { path: 'static', component: StaticDataComponent, data: {message: "page not found"} },
   { path: 'react', component: ReactiveComponent},
   { path: 'fire', component: FirebaseComponent},
   { path: 'htp', component: HttpserviceComponent},
+  { path: 'res', component: AuthResolveComponent},
+  { path: 'sub', component: SubjectsComponent},
+  // { path: 'edit' , component: EditServerComponent},
   { path: '**', component: WildCardComponent }
 ]
 
@@ -66,7 +71,9 @@ const appRoutes: Routes = [
     ReactiveComponent,
     FirebaseComponent,
     HttpserviceComponent,
-    DeactivateComponent
+    DeactivateComponent,
+    AuthResolveComponent,
+    SubjectsComponent
   ],
   imports: [
     BrowserModule,
@@ -76,7 +83,7 @@ const appRoutes: Routes = [
     ReactiveFormsModule,
     HttpClientModule
   ],
-  providers: [AuthService, AuthguardService, DeactivateService, UserService],
+  providers: [AuthService, AuthguardService, DeactivateService, NotificationService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
