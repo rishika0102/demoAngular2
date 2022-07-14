@@ -16,7 +16,7 @@ import { WildCardComponent } from './wild-card/wild-card.component';
 import { ReactiveComponent } from './reactive/reactive.component';
 import {ReactiveFormsModule} from '@angular/forms';
 import { FirebaseComponent } from './firebase/firebase.component';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { HttpserviceComponent } from './httpservice/httpservice.component';
 import { AuthService } from './auth.service';
 import { AuthguardService} from './authguard.service';
@@ -27,6 +27,8 @@ import { UserResloveService } from './user-reslove.service';
 import { AuthResolveComponent } from './auth-resolve/auth-resolve.component';
 import { SubjectsComponent } from './subjects/subjects.component';
 import {NotificationService} from './notification.service';
+import {HeadInterceptor} from './head.interceptor';
+import { HeadsInterceptor } from './heads.interceptor'
 const appRoutes: Routes = [
   { path: 'route', component: RouterComponent},
   { path: 'routelink', component: RouterlinksComponent},
@@ -83,7 +85,10 @@ const appRoutes: Routes = [
     ReactiveFormsModule,
     HttpClientModule
   ],
-  providers: [AuthService, AuthguardService, DeactivateService, NotificationService],
+  providers: [AuthService, AuthguardService, DeactivateService, NotificationService,
+  {provide: HTTP_INTERCEPTORS, useClass:HeadInterceptor, multi: true},
+  {provide: HTTP_INTERCEPTORS, useClass:HeadsInterceptor, multi: true}
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
