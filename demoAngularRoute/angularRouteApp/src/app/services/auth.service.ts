@@ -8,7 +8,9 @@ export class AuthService {
   constructor() { }
   isLoggedIn = false;
 
-  login() {
+  login(email:any, psd:any) {
+    console.log("email....",email);
+    console.log("psd...", psd);
     this.isLoggedIn = true;
   }
   logout() {

@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {FormGroup, FormControl, Validators} from '@angular/forms';
 import { ReactiveFormsModule} from '@angular/forms';
 import {HttpClient} from '@angular/common/http';
-import { PostService } from '../post.service';
+import { PostService } from '../services/post.service';
 
 @Component({
   selector: 'app-httpservice',

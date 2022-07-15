@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Subject, BehaviorSubject, Observable } from 'rxjs';
-import { NotificationService } from '../notification.service';
+import { NotificationService } from '../services/notification.service';
 
 
 @Component({

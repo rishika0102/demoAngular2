@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { DataService } from './data.service';
-import { AuthService } from './auth.service';
+import { DataService } from './services/data.service';
+import { AuthService } from './services/auth.service';
 
 @Component({
   selector: 'app-root',
@@ -9,12 +9,14 @@ import { AuthService } from './auth.service';
   providers: [DataService]
 })
 export class AppComponent {
+
+
   title = 'angularRouteApp';
  constructor(private dataService: DataService, private authService: AuthService){}
- Login() {
-   this.authService.login();
- }
- Logout() {
-   this.authService.logout();
+ Login(email:any , psd:any) {
+   if(email.value && psd.value)
+     this.authService.login(email.value, psd.value);
+   else
+     alert("fill the required fields");
  }
 }

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Data } from '@angular/router';
 import { Observable, of, from, map, filter } from 'rxjs';
-import { DataService } from '../data.service';
+import { DataService } from '../services/data.service';
 
 @Component({
   selector: 'app-static-data',

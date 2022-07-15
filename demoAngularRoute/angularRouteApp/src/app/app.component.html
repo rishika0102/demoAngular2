@@ -3,19 +3,15 @@
   <router-outlet></router-outlet>
 <div>
   <li><a routerLink="/route">router</a></li>
-  <li><a routerLink="/routelink">routerlink</a></li>
-  <li><a routerLink="/users">users</a></li>
-  <li><a routerLink="/user">user</a></li>
-  <li><a routerLink="/static">Passing static data</a></li>
-  <li><a routerLink="/react">Reactive forms</a></li>
-  <li><a routerLink="/fire">firebase</a></li>
-  <li><a routerLink="/htp">Http Request by service</a></li>
-  <li><a routerLink="/deactive">Auth Deactive</a></li>
-  <li><a routerLink="/res">Auth Resolve</a></li>
-  <li><a routerLink="/sub">Subject</a></li>
-  <li><a routerLink="/child">childRoute</a></li>
   <app-edit-server></app-edit-server>
-  <button (click)="Login()">Click me for auth login</button>
-  <button (click)="Logout()">Click me for auth-guard login</button>
+  <app-custom></app-custom>
+  <label>Email</label>
+  <input type="email" #email/><br>
+  <label>Password</label>
+  <input type="password" #password/><br><br>
+  <button (click)="Login(email, password)">Click me for auth login</button>
+  <!-- <button (click)="Logout()">Click me for auth-guard login</button> -->
+  <app-dynamic></app-dynamic>
+  <app-modul></app-modul>
 </div>
 </div>

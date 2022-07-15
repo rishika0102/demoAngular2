@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { IDeactivateGuard } from '../deactivate.service';
+import { IDeactivateGuard } from '../services/deactivate.service';
 @Component({
   selector: 'app-deactivate',
   templateUrl: './deactivate.component.html',

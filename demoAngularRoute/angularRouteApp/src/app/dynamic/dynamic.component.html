@@ -1,0 +1,9 @@
+<p>dynamic works!</p>
+<div class="mx-3">
+   <button class="btn btn-primary mx-3" (click)="assignComponent('Test')">Test</button>
+  <button class="btn btn-primary mx-3" (click)="assignComponent('Test1')">Test1</button>
+  <button class="btn btn-primary" (click)="assignComponent('Test2')">Test2</button>
+</div>
+<div>
+  <ng-container *ngComponentOutlet="dynamics"></ng-container>
+</div>
