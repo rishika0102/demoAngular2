@@ -1,5 +1,5 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
-import { NgForm } from '@angular/forms';
+import { Component, OnInit, ViewChild, NgModule } from '@angular/core';
+import { NgForm, FormsModule } from '@angular/forms';
 @Component({
   selector: 'app-wild-card',
   templateUrl: './wild-card.component.html',

@@ -20,7 +20,8 @@ import { DynamicComponent } from './dynamic/dynamic.component';
 import { TestComponent } from './test/test.component';
 import { Test1Component } from './test1/test1.component';
 import { Test2Component } from './test2/test2.component';
-import { ModulComponent } from './modul/modul.component';
+import { ModulModule } from './modul/modul.module';
+// import { LazyloadComponent } from './lazyload/lazyload.component';
 
 
 @NgModule({
@@ -32,23 +33,22 @@ import { ModulComponent } from './modul/modul.component';
     MyNgIfDirective,
     DynamicComponent,
     TestComponent,
-    Test1Component,
-    Test2Component,
-    ModulComponent
+    Test2Component
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    ModulModule
   ],
   providers: [AuthService, AuthguardService, DeactivateService, NotificationService,
   {provide: HTTP_INTERCEPTORS, useClass:HeadInterceptor, multi: true},
   {provide: HTTP_INTERCEPTORS, useClass:HeadsInterceptor, multi: true}
   ],
   bootstrap: [AppComponent],
-  entryComponents: [TestComponent]
+  entryComponents: [Test1Component]
 })
 export class AppModule { }
 

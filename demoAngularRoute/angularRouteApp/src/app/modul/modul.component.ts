@@ -10,7 +10,6 @@ export class ModulComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-    console.log("modules");
   }
 
 }

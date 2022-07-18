@@ -20,6 +20,7 @@ import { SubjectsComponent } from './subjects/subjects.component';
 import { Custom } from './customComponent/cutsom.component';
 import { HttpserviceComponent } from './httpservice/httpservice.component';
 import { AuthResolveComponent } from './auth-resolve/auth-resolve.component';
+import { ModulComponent } from './modul/modul.component';
 
 const routes: Routes = [
   { path: 'route', component: RouterComponent},
@@ -46,7 +47,9 @@ const routes: Routes = [
   { path: 'htp', component: HttpserviceComponent},
   { path: 'res', component: AuthResolveComponent},
   { path: 'sub', component: SubjectsComponent},
-   { path: 'child', component: ChildrouteComponent},
+  // { path: 'child', component: ChildrouteComponent},
+  { path: 'mod', loadChildren:() => import ('./modul/modul.module').then((y) => y.ModulModule)},
+  { path: 'lazy', loadChildren:() =>import('./lazyload/lazyload/lazyload.module').then((x) => x.LazyloadModule)},
   // { path: 'edit' , component: EditServerComponent},
   { path: '**', component: WildCardComponent }
 ];

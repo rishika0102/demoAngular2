@@ -1,5 +1,6 @@
 import { Component, OnInit,ComponentFactoryResolver  } from '@angular/core';
 import { Test1Component } from '../test1/test1.component';
+import { DataService } from '../services/data.service';
 @Component({
   selector: 'app-test',
   templateUrl: './test.component.html',
@@ -7,8 +8,8 @@ import { Test1Component } from '../test1/test1.component';
 })
 export class TestComponent implements OnInit {
 
-  constructor(private componentFact : ComponentFactoryResolver) { }
-
+  constructor(private dataService: DataService, private componentFact : ComponentFactoryResolver) { }
+  // constructor() { }
   ngOnInit(): void {
   }
   showComponentFcatory() {

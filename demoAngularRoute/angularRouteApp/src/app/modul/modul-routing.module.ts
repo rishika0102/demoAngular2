@@ -4,12 +4,16 @@ import { Modul1Component } from './modul1/modul1.component';
 import { Modul2Component } from './modul2/modul2.component';
 const modRoute: Routes = [
   {
-    path: 'mod1' , component: Modul1Component
+    path: 'mod' , component: Modul1Component, children:[
+
+  {
+    path: './mod/mod1' , component: Modul1Component
   },
    {
-    path: 'mod2' , component: Modul2Component
+    path: './mod/mod2' , component: Modul2Component
   }
-
+  ]
+}
 ];
 
 @NgModule({
@@ -18,5 +22,8 @@ const modRoute: Routes = [
 
 })
 export class modulRouting{
+  constructor() {
+    console.log("featured Module child");
+  }
 
 }
