@@ -11,7 +11,6 @@ export class LazyloadComponent implements OnInit {
     console.log("lazyloading....");
    }
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void {}
 
 }

@@ -12,9 +12,9 @@ export class RouterComponent implements OnInit {
 
   ngOnInit(): void {
     console.log("life cycle method called");
-    this.dataservice.dataEmitter.subscribe((value)=>{
+    this.dataservice.dataEmitter.subscribe((value)=> {
       this.inputText = value;
-  })
+    })
   }
  inputText: string;
 }

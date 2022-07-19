@@ -12,8 +12,8 @@ export class FilterPipe implements PipeTransform {
   }
 
   const users:any[] = [];
-  for(let user of value){
-    if(user['name'] === filterString){
+  for(let user of value) {
+    if(user['name'] === filterString) {
       users.push(user);
     }
   }

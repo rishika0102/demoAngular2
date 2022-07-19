@@ -4,9 +4,9 @@ import { Component, OnInit } from '@angular/core';
   selector: 'app-custom',
   templateUrl: './custom.component.html'
 })
+
 export class Custom {
 
   value: any = true;
-
 
 }

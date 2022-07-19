@@ -18,10 +18,12 @@ export class AppComponent {
     private authService: AuthService){}
 
   login(email: any, psd: any) {
-    if(email.value && psd.value)
+    if(email.value && psd.value) {
       this.authService.login(email.value, psd.value);
-    else
+    }
+    else {
       alert("fill the required fields");
+    }
   }
 
 }

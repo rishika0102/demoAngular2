@@ -1,20 +1,19 @@
 <div>
-<p>Angular router app</p>
+  <p>Angular router app</p>
   <router-outlet></router-outlet>
-<div>
-  <li><a routerLink="/route">router</a></li>
-  <!-- <li><a routerLink="/mod">Modul</a></li> -->
- <!--  <app-edit-server></app-edit-server>
-  <app-custom></app-custom>
-  <label>Email</label>
-  <input type="email" #email/><br>
-  <label>Password</label>
-  <input type="password" #password/><br><br>
-  <button (click)="login(email, password)">Click me for auth login</button> -->
-  <!-- <button (click)="Logout()">Click me for auth-guard login</button> -->
-  <app-dynamic></app-dynamic>
-  <app-modul></app-modul>
-  <app-childrouting [test]="test1" [testNext]="testNext1"></app-childrouting>
-  <!-- <app-lazyload></app-lazyload> -->
-</div>
+  <div>
+    <li><a routerLink="/route">router</a></li>
+    <app-edit-server></app-edit-server>
+    <app-custom></app-custom>
+    <label>Email</label>
+    <input type="email" #email/><br>
+    <label>Password</label>
+    <input type="password" #password/><br><br>
+    <button (click)="login(email, password)">Click me for auth login</button>
+    <button (click)="Logout()">Click me for auth-guard login</button>
+    <app-dynamic></app-dynamic>
+    <app-modul></app-modul>
+    <app-childrouting [test]="test1" [testNext]="testNext1"></app-childrouting>
+    <app-lazyload></app-lazyload>
+  </div>
 </div>

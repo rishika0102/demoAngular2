@@ -23,13 +23,15 @@ export class UsersComponent {
       name: 'Chris'
     }
   ];
-    showRoute(){
+
+  showRoute() {
     console.log("routechild", this.router.navigate(['routechild']));
     this.router.navigate(['routechild'], {relativeTo: this.route});
   }
-  showRouting(){
+
+  showRouting() {
     console.log("routingchild", this.router.navigate(['routingchild']));
-     this.router.navigate(['routingchild'],{relativeTo: this.route});
+    this.router.navigate(['routingchild'],{relativeTo: this.route});
   }
 
 }

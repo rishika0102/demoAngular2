@@ -13,9 +13,11 @@ export class AuthService {
     console.log("psd...", psd);
     this.isLoggedIn = true;
   }
+
   logout() {
     this.isLoggedIn = false;
   }
+
   isAuthenticated(){
     return this.isLoggedIn;
   }

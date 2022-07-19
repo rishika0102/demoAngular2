@@ -16,13 +16,17 @@ export class DynamicComponent implements OnInit {
   ngOnInit(): void {
     console.log("dynamic");
   }
+
   assignComponent(com:any) {
-    if(com === 'Test')
+    if(com === 'Test') {
       this.dynamics = TestComponent;
-    else if(com === 'Test1')
+    }
+    else if(com === 'Test1') {
       this.dynamics = Test1Component;
-    else if(com === 'Test2')
+    }
+    else if(com === 'Test2') {
       this.dynamics = Test2Component;
+    }
   }
 
 }

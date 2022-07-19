@@ -12,14 +12,14 @@
   <button (click)="query()">queryparams and fragmemts</button> -->
   <router-outlet>
      <a
-    [routerLink] = "['/user', 5, 'edit' ]"
-    [queryParams] = "{allowEdit: '1'}"
-    fragment= "loading"
-    href="#">{{user.name}}
-  </a>
-  <p>User with id is {{user.id}}
-  </p>
-  <p>User with name is {{user.name}}</p>
-  <button (click)="query()">queryparams and fragmemts</button>
+      [routerLink] = "['/user', 5, 'edit' ]"
+      [queryParams] = "{allowEdit: '1'}"
+      fragment= "loading"
+      href="#">{{user.name}}
+    </a>
+    <p>User with id is {{user.id}}
+    </p>
+    <p>User with name is {{user.name}}</p>
+    <button (click)="query()">queryparams and fragmemts</button>
   </router-outlet>
 </div>

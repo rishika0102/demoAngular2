@@ -8,9 +8,11 @@ interface User {
   id: string;
   name: string;
 }
-export class UserResloveService implements Resolve<User>{
+export class UserResloveService implements Resolve<User> {
+
     constructor(private userService: UserService){}
-    resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): User | Observable<User> | Promise<User>{
+
+    resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): User | Observable<User> | Promise<User> {
       let id = route.params['id'];
       let details = this.userService.getUser(id);
       return details;

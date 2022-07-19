@@ -26,7 +26,7 @@ export class HttpserviceComponent implements OnInit {
   }
 
   getPosts() {
-   this.postService.fetchPosts().subscribe(response =>{
+   this.postService.fetchPosts().subscribe(response => {
         console.log("get response",response);
         this.posts = response;
     })
@@ -43,7 +43,7 @@ export class HttpserviceComponent implements OnInit {
     )
   }
   clearPost(){
-    this.postService.clearPost().subscribe(response =>{
+    this.postService.clearPost().subscribe(response => {
       this.getPosts();
     })
   }

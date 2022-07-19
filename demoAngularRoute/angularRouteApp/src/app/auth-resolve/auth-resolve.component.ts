@@ -7,12 +7,13 @@ import { ActivatedRoute, Params } from '@angular/router';
   styleUrls: ['./auth-resolve.component.css']
 })
 export class AuthResolveComponent implements OnInit {
-   user: { id: string; name: string};
+  user: { id: string; name: string};
   editUserDetails: {id: string; name: string};
+
   constructor(private route: ActivatedRoute) { }
 
   ngOnInit(): void {
-     this.route.params.subscribe(data =>{
+    this.route.params.subscribe(data =>{
       this.user = {
         id: data['user']['id'],
         name: data['user']['name'],
@@ -20,11 +21,13 @@ export class AuthResolveComponent implements OnInit {
       this.editUserDetails = {...this.user};
     })
   }
+
   editUser() {
-    if(this.editUserDetails.id !== this.user.id || this.editUserDetails.name !== this.user.name){
+
+   if(this.editUserDetails.id !== this.user.id || this.editUserDetails.name !== this.user.name) {
       return true;
     } else {
-      return false;
-    }
+       return false;
+      }
   }
 }

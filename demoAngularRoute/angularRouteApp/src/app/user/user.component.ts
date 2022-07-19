@@ -16,6 +16,7 @@ export class UserComponent implements OnInit {
       name: this.route.snapshot.params['name'],
     };
   }
+
   query() {
     this.router.navigate(['/user', 2, 'adan']),
       {queryParams:{page: 1, search: 'adan'}}

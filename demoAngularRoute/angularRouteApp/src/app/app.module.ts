@@ -44,8 +44,8 @@ import { ModulModule } from './modul/modul.module';
     ModulModule
   ],
   providers: [AuthService, AuthguardService, DeactivateService, NotificationService,
-  {provide: HTTP_INTERCEPTORS, useClass:HeadInterceptor, multi: true},
-  {provide: HTTP_INTERCEPTORS, useClass:HeadsInterceptor, multi: true}
+    {provide: HTTP_INTERCEPTORS, useClass:HeadInterceptor, multi: true},
+    {provide: HTTP_INTERCEPTORS, useClass:HeadsInterceptor, multi: true}
   ],
   bootstrap: [AppComponent],
   entryComponents: [Test1Component]

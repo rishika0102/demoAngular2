@@ -29,7 +29,7 @@ export class ChildroutingComponent implements OnInit, OnChanges {
   ngOnChanges(changes: SimpleChanges) {
     console.log("Changes... ", changes)
     console.log(this.testNext);
-    if(this.testNext){
+    if(this.testNext) {
       this.testNextChng();
     }
     // for(let x in changes){

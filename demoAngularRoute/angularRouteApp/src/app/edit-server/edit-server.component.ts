@@ -6,7 +6,7 @@ import {NotificationService} from '../services/notification.service';
   templateUrl: './edit-server.component.html',
   styleUrls: ['./edit-server.component.css']
 })
-export class EditServerComponent implements OnInit{
+export class EditServerComponent implements OnInit {
   constructor(private notificationS: NotificationService) { }
 
   appStatus = new Promise((resolve, reject) =>{
@@ -14,6 +14,7 @@ export class EditServerComponent implements OnInit{
       resolve('users data received');
     }, 1000)
   })
+
   filteredString : string = '';
   user:any[] = [
     {firstname:'test', lastname: 'user', salary:1000000, Dob:new Date('05/10/1989')},
@@ -25,12 +26,14 @@ export class EditServerComponent implements OnInit{
     }
   ];
   notificationMessage: string;
+
   ngOnInit(): void {
     this.notificationS.notificationSubject.subscribe(d => {
         this.notificationMessage = d;
         console.log("notify",this.notificationMessage);
     })
   }
+
   onAddUser() {
     this.user.push({
       firstname: 'sample',

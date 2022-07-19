@@ -10,8 +10,8 @@ export class TestComponent implements OnInit {
 
   constructor(private dataService: DataService, private componentFact : ComponentFactoryResolver) { }
   // constructor() { }
-  ngOnInit(): void {
-  }
+  ngOnInit(): void {}
+
   showComponentFcatory() {
     const component = this.componentFact.resolveComponentFactory(Test1Component)
     console.log(component);

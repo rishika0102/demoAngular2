@@ -6,7 +6,8 @@ export class DataService{
 
   // dataEmitter = new EventEmitter<string>();
   dataEmitter = new Subject<string>();
-  raiseDataEmitterEvent(data: string){
+  raiseDataEmitterEvent(data: string) {
       this.dataEmitter.next(data);
   }
+
 }

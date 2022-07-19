@@ -5,13 +5,14 @@ import { IDeactivateGuard } from '../services/deactivate.service';
   templateUrl: './deactivate.component.html',
   styleUrls: ['./deactivate.component.css']
 })
-export class DeactivateComponent implements OnInit, IDeactivateGuard{
+export class DeactivateComponent implements OnInit, IDeactivateGuard {
 
   ngOnInit(): void {
    console.log("ngOnInit called")
   }
+
   canExit() {
-    if(confirm('Are you sure to exit?')){
+    if(confirm('Are you sure to exit?')) {
       return true;
     }
     return false;

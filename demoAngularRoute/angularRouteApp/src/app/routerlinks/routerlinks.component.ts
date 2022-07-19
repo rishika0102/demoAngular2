@@ -6,6 +6,7 @@ import { Router } from '@angular/router';
   templateUrl: './routerlinks.component.html',
   styleUrls: ['./routerlinks.component.css']
 })
+
 export class RouterlinksComponent implements OnInit {
 
   constructor(private router: Router) { }
@@ -13,6 +14,7 @@ export class RouterlinksComponent implements OnInit {
   ngOnInit(): void {
     console.log("life cycle method called");
   }
+
   onLoadServers() {
     this.router.navigate(['/route']);
   }

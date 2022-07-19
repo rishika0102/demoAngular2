@@ -27,14 +27,16 @@ export class WildCardComponent implements OnInit {
   //   console.log("submitted", form);
   // }
   suggestUserName() {
+
     const suggestedName = 'Superuser';
-   this.signupForm.form.patchValue({
-     userData: {
-       username: suggestedName
-     }
-   });
+    this.signupForm.form.patchValue({
+       userData: {
+         username: suggestedName
+       }
+    });
   }
   onSubmit() {
+
     this.submitted = true;
     console.log(this.signupForm);
     this.user.username = this.signupForm.value.userData.username;
